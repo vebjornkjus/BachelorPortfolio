@@ -8,6 +8,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
   const navItems = [
     { name: 'Hjem', id: 'home' },
     { name: 'Om oss', id: 'about' },
+    { name: 'Prosjekter', id: 'projects' },
     { name: 'Medlemmer', id: 'members' },
     { name: 'Kontakt', id: 'contact' }
   ];
@@ -18,7 +19,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
         <div className="flex justify-between items-center py-6">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              TechTeam
+              Bachelorgruppe
             </h1>
           </div>
           
@@ -83,7 +84,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
 };
 
 // Home/Landing Page Component
-const HomePage = () => {
+const HomePage = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
@@ -91,7 +92,7 @@ const HomePage = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Velkommen til{' '}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              TechTeam
+              Bachelorgruppa!
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -99,10 +100,16 @@ const HomePage = () => {
             Sammen utvikler vi løsninger som former morgendagens digitale landskap.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transform hover:scale-105 transition-all duration-200 shadow-lg border border-cyan-500/30">
+            <button 
+              onClick={() => setCurrentPage('about')}
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transform hover:scale-105 transition-all duration-200 shadow-lg border border-cyan-500/30"
+            >
               Lær mer om oss
             </button>
-            <button className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-200">
+            <button 
+              onClick={() => setCurrentPage('projects')}
+              className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-200"
+            >
               Se våre prosjekter
             </button>
           </div>
@@ -433,6 +440,152 @@ const ContactForm = () => {
   );
 };
 
+// Projects Page Component
+const ProjectsPage = () => {
+  const [expandedProjects, setExpandedProjects] = useState(new Set());
+  
+  const toggleDescription = (projectId) => {
+    setExpandedProjects(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(projectId)) {
+        newSet.delete(projectId);
+      } else {
+        newSet.add(projectId);
+      }
+      return newSet;
+    });
+  };
+  
+  const truncateText = (text, maxLength = 120) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + '...';
+  };
+
+  const projects = [
+    {
+      id: 1,
+      title: "Nuke Map",
+      description: "Utviklet en fullstack webapplikasjon som simulerer konsekvensene av et atomangrep. Backend bygget på Supabase med PostGIS for lagring og romlige spørringer, mens frontend benytter Leaflet, GeoJSON og TurfJS for interaktive kartlag og analyser. Datasett fra GeoNorge (befolkning, tilfluktsrom, brannstasjoner) ble integrert og visualisert gjennom dynamiske kartlag og spatial queries.Dette er et eksempel på et prosjekt. Du kan enkelt endre denne beskrivelsen og legge til dine egne prosjekter.",
+      image: "/images/NukeMap.png", // Du kan bytte ut med din egen bilde-URL
+      github: "https://github.com/vebjornkjus/IS-218-Oppg2",
+      technologies: ["Javascript", "Leaflet", "Supabase", "PostgreSQL", "QGIS", "GeoJSON"],
+      status: "Fullført"
+    },
+    {
+      id: 2,
+      title: "Eksempel Prosjekt 2",
+      description: "Et annet eksempel prosjekt. Legg til video eller GIF-URL i image-feltet for å vise animasjoner.",
+      image: "/images/project2.gif", // Du kan bruke GIF her også
+      github: "https://github.com/username/project2",
+      technologies: ["Vue.js", "Express", "PostgreSQL"],
+      status: "Fullført"
+    },
+    {
+      id: 3,
+      title: "Eksempel Prosjekt 3",
+      description: "Tredje prosjekt eksempel. Du kan enkelt kopiere denne strukturen og legge til flere prosjekter.",
+      image: "https://via.placeholder.com/400x200?text=Ditt+Prosjekt",
+      github: "https://github.com/username/project3",
+      technologies: ["Python", "Django", "SQLite"],
+      status: "Fullført"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Våre{' '}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Prosjekter
+            </span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Utforsk våre innovative løsninger og tekniske prosjekter som viser vår ekspertise og kreativitet.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl hover:shadow-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover border-b border-gray-700"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    project.status === 'Fullført' ? 'bg-green-900 text-green-300 border border-green-500/30' :
+                    project.status === 'Pågående' ? 'bg-blue-900 text-blue-300 border border-blue-500/30' :
+                    'bg-gray-800 text-gray-300 border border-gray-500/30'
+                  }`}>
+                    {project.status}
+                  </span>
+                </div>
+                <div className="text-gray-400 mb-4 leading-relaxed">
+                  <p className="mb-2">
+                    {expandedProjects.has(project.id) 
+                      ? project.description 
+                      : truncateText(project.description)
+                    }
+                  </p>
+                  {project.description.length > 120 && (
+                    <button 
+                      onClick={() => toggleDescription(project.id)}
+                      className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors duration-200"
+                    >
+                      {expandedProjects.has(project.id) ? 'Se mindre' : 'Se mer'}
+                    </button>
+                  )}
+                </div>
+                
+                <div className="mb-4">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, index) => (
+                      <span key={index} className="px-2 py-1 bg-gray-800 border border-gray-600 rounded text-cyan-400 text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 border border-cyan-500/30"
+                  >
+                    Se på GitHub
+                  </a>
+                  <div className="text-gray-500 text-sm">
+                    Prosjekt #{project.id}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-gray-900 border border-gray-700 rounded-xl shadow-2xl p-8 text-center">
+          <h2 className="text-2xl font-semibold text-white mb-4">Har du et prosjekt i tankene?</h2>
+          <p className="text-gray-400 mb-6">
+            Vi elsker å jobbe med spennende prosjekter og er alltid åpne for nye samarbeid og utfordringer.
+          </p>
+          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 border border-cyan-500/30">
+            Kontakt Oss
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Contact Page Component
 const ContactPage = () => {
   return (
@@ -464,7 +617,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white mb-1">E-post</h3>
-                  <p className="text-gray-400">kontakt@techteam.no</p>
+                  <p className="text-gray-400">vebjorn.kjus@gmail.com</p>
                 </div>
               </div>
 
@@ -526,7 +679,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">TechTeam</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Bachelorgruppe</h3>
             <p className="text-gray-400 leading-relaxed">
               En gruppe dedikerte studenter som skaper innovative teknologiløsninger 
               for morgendagens utfordringer.
@@ -536,7 +689,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-white">Kontakt</h4>
             <div className="space-y-2 text-gray-400">
-              <p>kontakt@techteam.no</p>
+              <p>vebjorn.kjus@gmail.com</p>
               <p>Oslo, Norge</p>
             </div>
           </div>
@@ -555,7 +708,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 TechTeam. Alle rettigheter reservert.</p>
+          <p>&copy; 2025 Bachelorgruppe. Alle rettigheter reservert.</p>
         </div>
       </div>
     </footer>
@@ -569,9 +722,11 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />;
+        return <HomePage setCurrentPage={setCurrentPage} />;
       case 'about':
         return <AboutPage />;
+      case 'projects':
+        return <ProjectsPage />;
       case 'members':
         return <MembersPage />;
       case 'contact':
