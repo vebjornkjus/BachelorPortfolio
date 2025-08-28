@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './App.css';
 
 // Header Component
@@ -153,7 +154,7 @@ const HomePage = ({ setCurrentPage }) => {
 };
 
 // About Page Component
-const AboutPage = () => {
+const AboutPage = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen bg-black py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -231,7 +232,10 @@ const AboutPage = () => {
             Vi er alltid interessert i spennende prosjekter og nye utfordringer. 
             Ta kontakt med oss for å diskutere hvordan vi kan hjelpe deg!
           </p>
-          <button className="bg-white text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors duration-200 border border-cyan-200">
+          <button 
+            onClick={() => setCurrentPage('contact')}
+            className="bg-white text-cyan-600 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors duration-200 border border-cyan-200"
+          >
             Kontakt Oss
           </button>
         </div>
@@ -283,7 +287,7 @@ const MemberCard = ({ name, role, bio, image, linkedin, github }) => {
 };
 
 // Members Page Component
-const MembersPage = () => {
+const MembersPage = ({ setCurrentPage }) => {
   const members = [
     {
       name: "Vebjørn Kjus",
@@ -297,7 +301,7 @@ const MembersPage = () => {
       name: "Kristian Kalleberg",
       role: "Full-stack Developer",
       bio: "Erfaren med både frontend og backend utvikling. Elsker å jobbe med komplekse systemarkitekturer og skalbare løsninger.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/placeholder-member.jpg",
       linkedin: "https://linkedin.com/in/kristian-kalleberg",
       github: "https://github.com/kristiankalleberg"
     },
@@ -305,7 +309,7 @@ const MembersPage = () => {
       name: "Kristoffer Holmsen",
       role: "Backend Developer & Database Specialist",
       bio: "Fokuserer på robust backend-utvikling og database-optimering. Har stor erfaring med cloud-tjenester og DevOps-praksis.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/placeholder-member.jpg",
       linkedin: "https://linkedin.com/in/kristoffer-holmsen",
       github: "https://github.com/kristofferholmsen"
     },
@@ -313,7 +317,7 @@ const MembersPage = () => {
       name: "Oliver Gyve",
       role: "Mobile Developer & Tech Lead",
       bio: "Leder teamets tekniske retning og spesialiserer seg på mobilutvikling. Brenner for ren kode og agile utviklingsmetoder.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/placeholder-member.jpg",
       linkedin: "https://linkedin.com/in/oliver-gyve",
       github: "https://github.com/olivergyve"
     },
@@ -321,7 +325,7 @@ const MembersPage = () => {
       name: "Gaute J. Hoel",
       role: "Data Scientist & AI Specialist",
       bio: "Jobber med maskinlæring og dataanalyse for å skape intelligente løsninger. Har sterk bakgrunn i statistikk og algoritmer.",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/placeholder-member.jpg",
       linkedin: "https://linkedin.com/in/gaute-hoel"
     }
   ];
@@ -348,7 +352,10 @@ const MembersPage = () => {
           <p className="text-gray-400 mb-6">
             Vi er alltid interessert i å møte like-minded personer og diskutere potensielle samarbeid.
           </p>
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 border border-cyan-500/30">
+          <button 
+            onClick={() => setCurrentPage('contact')}
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 border border-cyan-500/30"
+          >
             Ta Kontakt
           </button>
         </div>
@@ -364,24 +371,112 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Clear any previous error messages when user starts typing
+    if (submitStatus === 'error') {
+      setSubmitStatus(null);
+      setErrorMessage('');
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert('Takk for din melding! Vi kommer tilbake til deg snart.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setErrorMessage('');
+
+    try {
+      // Basic validation before sending
+      if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+        throw new Error('Alle felt må fylles ut');
+      }
+
+      // EmailJS configuration
+      const serviceId = 'service_m23v6mp';
+      const templateId = 'template_lk5t9gl';
+      const publicKey = 'kd9ofrAXKi7QlAUT8';
+
+      // Template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.name.trim(),
+        from_email: formData.email.trim(),
+        message: formData.message.trim(),
+        to_name: 'Bachelorgruppe',
+        reply_to: formData.email.trim(),
+      };
+
+      // Send email using EmailJS with proper error handling
+      const result = await emailjs.send(serviceId, templateId, templateParams, publicKey)
+        .catch(emailError => {
+          console.error('EmailJS error details:', emailError);
+          throw emailError;
+        });
+
+      console.log('Email sent successfully:', result);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+
+    } catch (error) {
+      console.error('Feil ved sending av e-post:', error);
+      setSubmitStatus('error');
+      
+      // More specific error handling
+      if (typeof error === 'string') {
+        setErrorMessage(error);
+      } else if (error.message) {
+        setErrorMessage(error.message);
+      } else if (error.text) {
+        setErrorMessage(`EmailJS feil: ${error.text}`);
+      } else if (error.status === 400) {
+        setErrorMessage('Ugyldig forespørsel. Sjekk at alle felt er fyllt ut korrekt.');
+      } else if (error.status === 401) {
+        setErrorMessage('Autorisering feilet. Sjekk EmailJS konfigurasjonen.');
+      } else if (error.status === 403) {
+        setErrorMessage('Tilgang nektet. Sjekk EmailJS innstillinger.');
+      } else if (error.status >= 500) {
+        setErrorMessage('Server feil. Prøv igjen om litt.');
+      } else {
+        setErrorMessage('Det oppstod en ukjent feil ved sending. Prøv igjen senere.');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Success Message */}
+      {submitStatus === 'success' && (
+        <div className="bg-emerald-900/50 border border-emerald-500/50 text-emerald-300 px-4 py-3 rounded-lg">
+          <div className="flex items-center">
+            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            Takk for din melding! Vi kommer tilbake til deg snart.
+          </div>
+        </div>
+      )}
+
+      {/* Error Message */}
+      {submitStatus === 'error' && (
+        <div className="bg-red-900/50 border border-red-500/50 text-red-300 px-4 py-3 rounded-lg">
+          <div className="flex items-center">
+            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            {errorMessage}
+          </div>
+        </div>
+      )}
+
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
           Navn *
@@ -393,7 +488,8 @@ const ContactForm = () => {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           placeholder="Ditt fulle navn"
         />
       </div>
@@ -409,7 +505,8 @@ const ContactForm = () => {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           placeholder="din@epost.no"
         />
       </div>
@@ -425,23 +522,35 @@ const ContactForm = () => {
           rows={6}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 resize-none"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
           placeholder="Skriv din melding her..."
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transform hover:scale-105 transition-all duration-200 shadow-lg border border-cyan-500/30"
+        disabled={isSubmitting}
+        className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transform hover:scale-105 transition-all duration-200 shadow-lg border border-cyan-500/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
       >
-        Send Melding
+        {isSubmitting ? (
+          <div className="flex items-center justify-center">
+            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Sender...
+          </div>
+        ) : (
+          'Send Melding'
+        )}
       </button>
     </form>
   );
 };
 
 // Projects Page Component
-const ProjectsPage = () => {
+const ProjectsPage = ({ setCurrentPage }) => {
   const [expandedProjects, setExpandedProjects] = useState(new Set());
   
   const toggleDescription = (projectId) => {
@@ -484,7 +593,7 @@ const ProjectsPage = () => {
       id: 3,
       title: "Eksempel Prosjekt 3",
       description: "Tredje prosjekt eksempel. Du kan enkelt kopiere denne strukturen og legge til flere prosjekter.",
-      image: "https://via.placeholder.com/400x200?text=Ditt+Prosjekt",
+      image: "/images/placeholder-project.jpg",
       github: "https://github.com/username/project3",
       technologies: ["Python", "Django", "SQLite"],
       status: "Fullført"
@@ -577,7 +686,10 @@ const ProjectsPage = () => {
           <p className="text-gray-400 mb-6">
             Vi elsker å jobbe med spennende prosjekter og er alltid åpne for nye samarbeid og utfordringer.
           </p>
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 border border-cyan-500/30">
+          <button 
+            onClick={() => setCurrentPage('contact')}
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 border border-cyan-500/30"
+          >
             Kontakt Oss
           </button>
         </div>
@@ -724,11 +836,11 @@ function App() {
       case 'home':
         return <HomePage setCurrentPage={setCurrentPage} />;
       case 'about':
-        return <AboutPage />;
+        return <AboutPage setCurrentPage={setCurrentPage} />;
       case 'projects':
-        return <ProjectsPage />;
+        return <ProjectsPage setCurrentPage={setCurrentPage} />;
       case 'members':
-        return <MembersPage />;
+        return <MembersPage setCurrentPage={setCurrentPage} />;
       case 'contact':
         return <ContactPage />;
       default:
