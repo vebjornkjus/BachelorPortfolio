@@ -411,6 +411,10 @@ const ContactForm = () => {
         message: formData.message.trim(),
         to_name: 'Bachelorgruppe',
         reply_to: formData.email.trim(),
+        // Additional parameters to ensure sender info is visible
+        sender_name: formData.name.trim(),
+        sender_email: formData.email.trim(),
+        sender_message: formData.message.trim(),
       };
 
       // Send email using EmailJS with proper error handling
