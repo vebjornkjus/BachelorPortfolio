@@ -21,11 +21,11 @@ const MembersPage = ({ setCurrentPage }) => {
     },
     {
       name: "Kristoffer Holmsen",
-      role: "Backend Developer & Database Specialist",
-      bio: "Fokuserer på robust backend-utvikling og database-optimering. Har stor erfaring med cloud-tjenester og DevOps-praksis.",
-      image: "/images/placeholder-member.jpg",
-      linkedin: "https://linkedin.com/in/kristoffer-holmsen",
-      github: "https://github.com/kristofferholmsen"
+      role: "Frontend & AI-utvikler",
+      bio: "rontend- og AI-utvikler med fokus på moderne grensesnitt og integrasjon av kunstig intelligens for å skape smarte og brukervennlige løsninger",
+      image: "/images/kristoffer.jpg",
+      linkedin: "https://www.linkedin.com/in/kristoffer-f-holmsen-17866737b/",
+      github: "https://github.com/Kri1410"
     },
     {
       name: "Oliver Gyve",
