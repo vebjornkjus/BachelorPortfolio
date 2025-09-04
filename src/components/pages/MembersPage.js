@@ -37,10 +37,10 @@ const MembersPage = ({ setCurrentPage }) => {
     },
     {
       name: "Gaute J. Hoel",
-      role: "Data Scientist & AI Specialist",
-      bio: "Jobber med maskinlæring og dataanalyse for å skape intelligente løsninger. Har sterk bakgrunn i statistikk og algoritmer.",
-      image: "/images/placeholder-member.jpg",
-      linkedin: "https://linkedin.com/in/gaute-hoel"
+      role: "UX-designer & Frontend-utvikler",
+      bio: "Liker å skape løsninger som både ser bra ut og er enkle å bruke. Jeg har erfaring med å bygge brukervennlige grensesnitt, og legger stor vekt på universell utforming slik at alle kan ha en god opplevelse.",
+      image: "/images/GauteBilde.jpg",
+      linkedin: "https://www.linkedin.com/in/gaute-jahren-hoel-4408a0338/"
     }
   ];
 
