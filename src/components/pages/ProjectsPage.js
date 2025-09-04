@@ -41,11 +41,11 @@ const ProjectsPage = ({ setCurrentPage }) => {
     },
     {
       id: 3,
-      title: "Eksempel Prosjekt 3",
-      description: "Tredje prosjekt eksempel. Du kan enkelt kopiere denne strukturen og legge til flere prosjekter.",
-      image: "/images/placeholder-project.jpg",
-      github: "https://github.com/username/project3",
-      technologies: ["Python", "Django", "SQLite"],
+      title: "Kartverket Webapp",
+      description: "Utviklet en webapplikasjon for Kartverket hvor brukere kan rapportere feil i kartdata direkte på et interaktivt kart. Systemet er bygget i ASP.NET med MariaDB i Docker, og benytter Leaflet for kartvisning. Funksjonalitet som brukerroller (innmelder, saksbehandler, admin), statusoppfølging og håndtering av duplikatmeldinger ble implementert. Prosjektet ble gjennomført med Scrum og Trello for å strukturere sprintene.",
+      image: "/images/KartverketWebapp2.png",
+      github: "https://github.com/vebjornkjus/kartverket",
+      technologies: ["ASP.NET Core", "C#", "MariaDB", "Docker", "Leaflet", "Microsoft Identity"],
       status: "Fullført"
     }
   ];
