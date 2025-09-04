@@ -61,7 +61,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Utforsk våre tidligere prosjekter
+            Her kan du se prosjektene våre. Prosjektene er skoleoppgaver hvor vi har jobbet og feilet oss fram til en løsning vi er stolte av å vise frem!
           </p>
         </div>
 
