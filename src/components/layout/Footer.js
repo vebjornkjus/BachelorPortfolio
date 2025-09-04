@@ -8,8 +8,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Bachelorgruppe</h3>
             <p className="text-gray-400 leading-relaxed">
-              En gruppe dedikerte studenter som skaper innovative teknologiløsninger 
-              for morgendagens utfordringer.
+              En gruppe motiverte studenter klare til å møte de utfordringene som kommer.
             </p>
           </div>
           
