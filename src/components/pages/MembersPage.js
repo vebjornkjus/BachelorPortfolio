@@ -6,7 +6,7 @@ const MembersPage = ({ setCurrentPage }) => {
     {
       name: "Vebjørn Kjus",
       role: "Full-stack Developer",
-      bio: "Bygger web‑apper i React og Tailwind, med fokus på UI (Figma) og WCAG 2.2. Praktisk erfaring med Scrum og sprintplanlegging. Har vært Scrum Master/prosjektleder.",
+      bio: "Erfaring med web-apper i React, Tailwind og .NET, med interesse for maskinlæring og AI. Har erfaring med Scrum, sprintplanlegging og har tidligere hatt rollen som Scrum Master/prosjektleder.",
       image: "/images/vebjornProfil.jpg",
       linkedin: "https://www.linkedin.com/in/vebjørn-kjus-16b309258/",
       github: "https://github.com/vebjornkjus"

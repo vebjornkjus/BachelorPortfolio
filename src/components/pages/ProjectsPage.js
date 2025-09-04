@@ -132,9 +132,9 @@ const ProjectsPage = ({ setCurrentPage }) => {
         </div>
 
         <div className="glass-card p-8 text-center rounded-xl">
-          <h2 className="text-2xl font-semibold text-white mb-4">Har du et prosjekt i tankene?</h2>
+          <h2 className="text-2xl font-semibold text-white mb-4">Skrive bacheloroppgaven hos din bedrift?</h2>
           <p className="text-gray-300 mb-6">
-            Vi elsker å jobbe med spennende prosjekter og er alltid åpne for nye samarbeid og utfordringer.
+            Vi elsker å sikte litt for høyt for vårt eget beste. Vil du ta en sjansen på oss?
           </p>
           <button 
             onClick={() => setCurrentPage('contact')}
