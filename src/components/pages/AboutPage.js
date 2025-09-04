@@ -7,8 +7,7 @@ const AboutPage = ({ setCurrentPage }) => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-6">Om Oss</h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Vi er fem dedikerte studenter innen informatikk og teknologi som har funnet sammen 
-            gjennom vår felles lidenskap for innovasjon og problemløsning.
+            Vi er fem dedikerte studenter som har funnet sammen gjennom vår felles lidenskap for kreativitet, problemløsning og samarbeid.
           </p>
         </div>
 
@@ -20,9 +19,8 @@ const AboutPage = ({ setCurrentPage }) => {
             skaper vi løsninger som overgår summen av delene våre.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            Vi fokuserer på moderne webutvikling, applikasjonsdesign, og innovative 
-            teknologiløsninger. Vårt mål er å levere produkter som ikke bare møter 
-            tekniske krav, men som også gir exceptional brukeropplevelse.
+            Vi er klare for enhver utfordring som kommer vår vei. og har som mål å kunne levere produter som ikke bare møter teknsike krav, men som også gir en utmerket brukeropplevelse.
+          
           </p>
         </div>
 
@@ -58,7 +56,7 @@ const AboutPage = ({ setCurrentPage }) => {
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Backend Utvikling (Node.js, Python, Java)
+                Backend Utvikling (Node.js, Python, Java, C#)
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>

@@ -17,7 +17,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
         <div className="flex justify-between items-center py-6">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Bachelorgruppe
+              Bachelorgruppe 11
             </h1>
           </div>
           

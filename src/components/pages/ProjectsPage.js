@@ -24,7 +24,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
     {
       id: 1,
       title: "Nuke Map",
-      description: "Utviklet en fullstack webapplikasjon som simulerer konsekvensene av et atomangrep. Backend bygget på Supabase med PostGIS for lagring og romlige spørringer, mens frontend benytter Leaflet, GeoJSON og TurfJS for interaktive kartlag og analyser. Datasett fra GeoNorge (befolkning, tilfluktsrom, brannstasjoner) ble integrert og visualisert gjennom dynamiske kartlag og spatial queries.Dette er et eksempel på et prosjekt. Du kan enkelt endre denne beskrivelsen og legge til dine egne prosjekter.",
+      description: "Utviklet en fullstack webapplikasjon som simulerer konsekvensene av et atomangrep. Backend bygget på Supabase med PostGIS for lagring og romlige spørringer, mens frontend benytter Leaflet, GeoJSON og TurfJS for interaktive kartlag og analyser. Datasett fra GeoNorge (befolkning, tilfluktsrom, brannstasjoner) ble integrert og visualisert gjennom dynamiske kartlag og spatial queries.",
       image: "/images/NukeMap.png",
       github: "https://github.com/vebjornkjus/IS-218-Oppg2",
       technologies: ["Javascript", "Leaflet", "Supabase", "PostgreSQL", "QGIS", "GeoJSON"],
@@ -61,7 +61,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Utforsk våre innovative løsninger og tekniske prosjekter som viser vår ekspertise og kreativitet.
+            Her kan du se prosjektene våre. Prosjektene er skoleoppgaver hvor vi har jobbet og feilet oss fram til en løsning vi er stolte av å vise frem!
           </p>
         </div>
 
