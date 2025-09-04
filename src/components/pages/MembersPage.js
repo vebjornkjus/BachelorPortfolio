@@ -29,9 +29,9 @@ const MembersPage = ({ setCurrentPage }) => {
     },
     {
       name: "Oliver Gyve",
-      role: "Mobile Developer & Tech Lead",
-      bio: "Leder teamets tekniske retning og spesialiserer seg på mobilutvikling. Brenner for ren kode og agile utviklingsmetoder.",
-      image: "/images/placeholder-member.jpg",
+      role: "Frontend-utvikler",
+      bio: "Frontend-utvikler med fokus på å skape brukergrensesnitt som kombinerer estetisk design med optimal funksjonalitet. Dedikert til å levere brukervennlige og innovative løsninger.",
+      image: "/images/OliverBilde.jpg",
       linkedin: "https://linkedin.com/in/oliver-gyve",
       github: "https://github.com/olivergyve"
     },
