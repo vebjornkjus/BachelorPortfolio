@@ -32,11 +32,11 @@ const ProjectsPage = ({ setCurrentPage }) => {
     },
     {
       id: 2,
-      title: "Eksempel Prosjekt 2",
-      description: "Et annet eksempel prosjekt. Legg til video eller GIF-URL i image-feltet for å vise animasjoner.",
-      image: "/images/project2.gif",
-      github: "https://github.com/username/project2",
-      technologies: ["Vue.js", "Express", "PostgreSQL"],
+      title: "IK Start App-prototype",
+      description: "Designet og prototypet en supporter-app for IK Start i Figma. Appen inkluderer funksjonalitet for billettkjøp, bestilling av kioskvarer, supporterbutikk for merchandise. Brukergrensesnittet er utformet i klubbens farger (gult og svart) med fokus på moderne UI/UX, og prototypen ble utviklet med interaktive komponenter og navigasjon for å simulere en realistisk app-opplevelse.",
+      image: "/images/IKStart.png",
+      github: "https://www.figma.com/proto/PxIjH3qhBDpiGrEtZMqUn8/Start_Egen?page-id=115%3A217&node-id=259-842&p=f&m=draw&scaling=scale-down&content-scaling=fixed&starting-point-node-id=259%3A842&show-proto-sidebar=1&t=P0vOUesXHK5X3HF0-1",
+      technologies: ["Figma", "Prototyping", "UI/UX Design", "Component Variants", "Interactive Navigation"],
       status: "Fullført"
     },
     {
@@ -120,7 +120,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
                     rel="noopener noreferrer"
                     className="glass-btn-primary px-4 py-2 rounded-lg glass-focus-ring"
                   >
-                    Se på GitHub
+                    {project.id === 2 ? 'Se på Figma' : 'Se på GitHub'}
                   </a>
                   <div className="text-gray-500 text-sm">
                     Prosjekt #{project.id}
