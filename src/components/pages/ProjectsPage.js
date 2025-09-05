@@ -43,7 +43,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
       id: 3,
       title: "Kartverket Webapp",
       description: "Utviklet en webapplikasjon for Kartverket hvor brukere kan rapportere feil i kartdata direkte på et interaktivt kart. Systemet er bygget i ASP.NET med MariaDB i Docker, og benytter Leaflet for kartvisning. Funksjonalitet som brukerroller (innmelder, saksbehandler, admin), statusoppfølging og håndtering av duplikatmeldinger ble implementert. Prosjektet ble gjennomført med Scrum og Trello for å strukturere sprintene.",
-      image: "/images/KartverketWebapp2.png",
+      image: "/images/Kartverketwebapp2.png",
       github: "https://github.com/vebjornkjus/kartverket",
       technologies: ["ASP.NET Core", "C#", "MariaDB", "Docker", "Leaflet", "Microsoft Identity"],
       status: "Fullført"
