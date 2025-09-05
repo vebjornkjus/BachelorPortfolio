@@ -93,17 +93,17 @@ const MembersPage = ({ setCurrentPage }) => {
     {
       id: 4,
       name: "Oliver Gyve",
-      title: "The Interface Guardian",
+      title: "The Frontend Artisan",
       role: "Frontend-utvikler",
       bio: "Frontend-utvikler med fokus på å skape brukergrensesnitt som kombinerer estetisk design med optimal funksjonalitet. Dedikert til å levere brukervennlige og innovative løsninger.",
       image: "/images/OliverBilde.jpg",
       linkedin: "https://linkedin.com/in/oliver-gyve",
       github: "https://github.com/olivergyve",
-      abilities: ["UI Design", "User Experience", "Frontend", "Innovation", "Aesthetics"],
+      abilities: ["Frontend", "Unversell utforming", "UX Design", "Aesthetics"],
       primaryColor: "from-orange-500 to-red-500",
       glowColor: "shadow-orange-500/50",
-      specialization: "User Interface Design & Frontend Innovation",
-      completedCourses: ["UX Research Methods", "Mobile App Development", "Data Visualization"]
+      specialization: "UX Design & Frontend",
+      completedCourses: ["Algrotihms and Data Structures", "Universell utforming av informasjonssystemer", "Geografiske Informasjonssystemer, AI og IoT; Introduksjon og Anvendelse"]
     },
     {
       id: 5,

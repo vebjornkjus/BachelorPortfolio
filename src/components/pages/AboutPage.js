@@ -30,7 +30,7 @@ const AboutPage = ({ setCurrentPage }) => {
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>
-                Innovasjon og kreativitet
+                 Kreativitet
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-cyan-400 rounded-full mr-3"></span>
