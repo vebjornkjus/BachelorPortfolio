@@ -65,7 +65,7 @@ const MembersPage = ({ setCurrentPage }) => {
       name: "Kristian Kalleberg",
       title: "The System Master",
       role: "Full-stack Developer",
-      bio: "Erfaring innen webutvikling og databaser, og interesse for fullstack systemutvikling. Har jobbet med prosjekter som inkluderer blant annet React, Leaflet, Supabase, og Figma for prototyping, med særlig interesse for arkitektur, integrasjoner og design.",
+      bio: "Erfaring innenfor webutvikling og databaser, og interesse for fullstack systemutvikling. Har jobbet med prosjekter som inkluderer blant annet React, Leaflet, Supabase, og Figma for prototyping, med særlig interesse for arkitektur, integrasjoner og design.",
       image: "/images/KristianProfil.jpg",
       linkedin: "https://www.linkedin.com/in/kristian-kalleberg-3a594637b/",
       github: "https://github.com/Kristiank02",
