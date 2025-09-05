@@ -11,6 +11,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure the page background behind all content is dark */
+html, body, #root {
+  background-color: #000; /* prevents white flash when overscrolling */
+  min-height: 100%;
+}
+
+/* Optional: reduce scroll chaining to parent (helps avoid background flashes) */
+body {
+  overscroll-behavior: contain;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
