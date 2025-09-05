@@ -14,10 +14,10 @@ const MembersPage = ({ setCurrentPage }) => {
     {
       name: "Kristian Kalleberg",
       role: "Full-stack Developer",
-      bio: "Erfaren med både frontend og backend utvikling. Elsker å jobbe med komplekse systemarkitekturer og skalbare løsninger.",
-      image: "/images/placeholder-member.jpg",
-      linkedin: "https://linkedin.com/in/kristian-kalleberg",
-      github: "https://github.com/kristiankalleberg"
+      bio: "Erfaring innen webutvikling og databaser, og interesse for fullstack systemutvikling. Har jobbet med prosjekter som inkluderer blant annet React, Leaflet, Supabase, og Figma for prototyping, med særlig interesse for arkitektur, integrasjoner og design.",
+      image: "/images/KristianProfil.jpg",
+      linkedin: "https://www.linkedin.com/in/kristian-kalleberg-3a594637b/",
+      github: "https://github.com/Kristiank02"
     },
     {
       name: "Kristoffer Holmsen",
