@@ -75,8 +75,7 @@ const AboutPage = ({ setCurrentPage }) => {
           <div className="relative z-10">
             <h3 className="text-2xl font-semibold mb-4 text-white">Klar for Samarbeid?</h3>
             <p className="mb-6 text-gray-300">
-              Vi er alltid interessert i spennende prosjekter og nye utfordringer. 
-              Ta kontakt med oss for å diskutere hvordan vi kan hjelpe deg!
+              Bestemt deg for oss allerede altså? Da får du trykke på knappen under da vel!
             </p>
             <button 
               onClick={() => setCurrentPage('contact')}
