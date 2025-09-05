@@ -134,7 +134,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
         <div className="glass-card p-8 text-center rounded-xl">
           <h2 className="text-2xl font-semibold text-white mb-4">Skrive bacheloroppgaven hos din bedrift?</h2>
           <p className="text-gray-300 mb-6">
-            Vi elsker å sikte litt for høyt for vårt eget beste. Vil du ta en sjansen på oss?
+            Vi elsker å sikte å sikte høyt, og jobbe hardt for å nå de målene vi har satt oss!!
           </p>
           <button 
             onClick={() => setCurrentPage('contact')}

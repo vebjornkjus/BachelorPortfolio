@@ -94,17 +94,17 @@ const MembersPage = ({ setCurrentPage }) => {
     {
       id: 4,
       name: "Oliver Gyve",
-      title: "The Interface Guardian",
+      title: "The Frontend Artisan",
       role: "Frontend-utvikler",
       bio: "Frontend-utvikler med fokus på å skape brukergrensesnitt som kombinerer estetisk design med optimal funksjonalitet. Dedikert til å levere brukervennlige og innovative løsninger.",
       image: "/images/OliverBilde.jpg",
       linkedin: "https://linkedin.com/in/oliver-gyve",
       github: "https://github.com/olivergyve",
-      abilities: ["UI Design", "User Experience", "Frontend", "Innovation", "Aesthetics"],
+      abilities: ["Frontend", "Unversell utforming", "UX Design", "Aesthetics"],
       primaryColor: "from-orange-500 to-red-500",
       glowColor: "shadow-orange-500/50",
-      specialization: "User Interface Design & Frontend Innovation",
-      completedCourses: ["UX Research Methods", "Mobile App Development", "Data Visualization"]
+      specialization: "UX Design & Frontend",
+      completedCourses: ["Algrotihms and Data Structures", "Universell utforming av informasjonssystemer", "Geografiske Informasjonssystemer, AI og IoT; Introduksjon og Anvendelse"]
     },
     {
       id: 5,
@@ -465,7 +465,7 @@ const MembersPage = ({ setCurrentPage }) => {
           <div className="glass-card p-8 text-center rounded-xl">
             <h2 className="text-2xl font-semibold text-white mb-4">Vil du jobbe med oss?</h2>
             <p className="text-gray-300 mb-6">
-              Vi er alltid interessert i å møte like-minded personer og diskutere potensielle samarbeid.
+              Visste du at 5 av 5 studenter på denne gruppa vil høre hva slags bachelorprosjekt dere har til oss!?
             </p>
             <button 
               onClick={() => setCurrentPage('contact')}
