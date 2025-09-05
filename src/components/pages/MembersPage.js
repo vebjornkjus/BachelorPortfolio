@@ -42,6 +42,7 @@ const MembersPage = ({ setCurrentPage }) => {
     { name: "Datamodellering og databasesystemer", category: "IS-201", color: "from-yellow-500 to-lime-500" },
     { name: "Universell utforming av informasjonssystemer", category: "IS-217", color: "from-emerald-500 to-teal-500" },
     { name: "Datasystemer og systemarkitektur", category: "IS-105", color: "from-amber-500 to-yellow-500" },
+    { name: "IT og samfunnsendringer", category: "TFL-119", color: "from-amber-500 to-yellow-500" },
   ];
 
   const members = [
@@ -117,7 +118,7 @@ const MembersPage = ({ setCurrentPage }) => {
       primaryColor: "from-pink-500 to-rose-500",
       glowColor: "shadow-pink-500/50",
       specialization: "User Experience Design & Accessibility",
-      completedCourses: ["UX Research Methods", "Mobile App Development", "IS-217 Universell utforming av informasjonssysteme"]
+      completedCourses: ["Geografiske Informasjonssystemer, AI og IoT; Introduksjon og Anvendelse", "IT og samfunnsendringer", "Universell utforming av informasjonssystemer"]
     }
   ];
 
