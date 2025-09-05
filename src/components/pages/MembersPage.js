@@ -40,6 +40,8 @@ const MembersPage = ({ setCurrentPage }) => {
     { name: "Algrotihms and Data Structures", category: "IS-211", color: "from-red-500 to-amber-500" },
     { name: "Geografiske Informasjonssystemer, AI og IoT; Introduksjon og Anvendelse", category: "IS-218", color: "from-cyan-500 to-blue-500" },
     { name: "Datamodellering og databasesystemer", category: "IS-201", color: "from-yellow-500 to-lime-500" },
+    { name: "Universell utforming av informasjonssystemer", category: "IS-217", color: "from-emerald-500 to-teal-500" },
+    { name: "Datasystemer og systemarkitektur", category: "IS-105", color: "from-amber-500 to-yellow-500" },
   ];
 
   const members = [
@@ -63,15 +65,15 @@ const MembersPage = ({ setCurrentPage }) => {
       name: "Kristian Kalleberg",
       title: "The System Master",
       role: "Full-stack Developer",
-      bio: "Erfaring innen webutvikling og databaser, og interesse for fullstack systemutvikling. Har jobbet med prosjekter som inkluderer blant annet React, Leaflet, Supabase, og Figma for prototyping, med særlig interesse for arkitektur, integrasjoner og design.",
+      bio: "Erfaring innenfor webutvikling og databaser, og interesse for fullstack systemutvikling. Har jobbet med prosjekter som inkluderer blant annet React, Leaflet, Supabase, og Figma for prototyping, med særlig interesse for arkitektur, integrasjoner og design.",
       image: "/images/KristianProfil.jpg",
       linkedin: "https://www.linkedin.com/in/kristian-kalleberg-3a594637b/",
       github: "https://github.com/Kristiank02",
-      abilities: ["Architecture", "Scalability", "Frontend", "Backend", "Systems"],
+      abilities: ["Architecture", "Frontend", "Backend", "Databases", "Design"],
       primaryColor: "from-green-500 to-emerald-500",
       glowColor: "shadow-green-500/50",
-      specialization: "Complex System Architecture & Scalable Solutions",
-      completedCourses: ["Cloud Architecture", "DevOps Pipeline Design", "Cybersecurity Fundamentals"]
+      specialization: "Fullstack Development, Databases & User Interface Design",
+      completedCourses: ["Algrotihms and Data Structures", "Universell utforming av informasjonssystemer", "Datasystemer og systemarkitektur"]
     },
     {
       id: 3,
@@ -115,7 +117,7 @@ const MembersPage = ({ setCurrentPage }) => {
       primaryColor: "from-pink-500 to-rose-500",
       glowColor: "shadow-pink-500/50",
       specialization: "User Experience Design & Accessibility",
-      completedCourses: ["UX Research Methods", "Mobile App Development", "Cybersecurity Fundamentals"]
+      completedCourses: ["UX Research Methods", "Mobile App Development", "IS-217 Universell utforming av informasjonssysteme"]
     }
   ];
 
