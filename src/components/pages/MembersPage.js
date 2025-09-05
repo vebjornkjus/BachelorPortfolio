@@ -464,7 +464,7 @@ const MembersPage = ({ setCurrentPage }) => {
           <div className="glass-card p-8 text-center rounded-xl">
             <h2 className="text-2xl font-semibold text-white mb-4">Vil du jobbe med oss?</h2>
             <p className="text-gray-300 mb-6">
-              Vi er alltid interessert i å møte like-minded personer og diskutere potensielle samarbeid.
+              Visste du at 5 av 5 studenter på denne gruppa vil høre hva slags bachelorprosjekt dere har til oss!?
             </p>
             <button 
               onClick={() => setCurrentPage('contact')}
