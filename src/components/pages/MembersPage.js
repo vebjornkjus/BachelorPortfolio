@@ -80,15 +80,15 @@ const MembersPage = ({ setCurrentPage }) => {
       name: "Kristoffer Holmsen",
       title: "The Data Sage",
       role: "Frontend & AI-utvikler",
-      bio: "rontend- og AI-utvikler med fokus på moderne grensesnitt og integrasjon av kunstig intelligens for å skape smarte og brukervennlige løsninger",
+      bio: "Frontend- og AI-utvikler med fokus på moderne grensesnitt og integrasjon av kunstig intelligens for å skape smarte og brukervennlige løsninger",
       image: "/images/kristoffer.jpg",
       linkedin: "https://www.linkedin.com/in/kristoffer-f-holmsen-17866737b/",
       github: "https://github.com/Kri1410",
-      abilities: ["Databases", "Cloud", "DevOps", "Backend", "Optimization"],
+      abilities: ["UX-design", "Frontend", "Design", "Backend", "Optimization"],
       primaryColor: "from-purple-500 to-violet-500",
       glowColor: "shadow-purple-500/50",
       specialization: "Database Architecture & Cloud Infrastructure",
-      completedCourses: ["Data Visualization", "Cloud Architecture", "DevOps Pipeline Design"]
+      completedCourses: ["Algrotihms and Data Structures", "Universell utforming av informasjonssystemer", "Datasystemer og systemarkitektur"]
     },
     {
       id: 4,
