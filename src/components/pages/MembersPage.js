@@ -40,7 +40,6 @@ const MembersPage = ({ setCurrentPage }) => {
     { name: "Algrotihms and Data Structures", category: "IS-211", color: "from-red-500 to-amber-500" },
     { name: "Geografiske Informasjonssystemer, AI og IoT; Introduksjon og Anvendelse", category: "IS-218", color: "from-cyan-500 to-blue-500" },
     { name: "Datamodellering og databasesystemer", category: "IS-201", color: "from-yellow-500 to-lime-500" },
-    { name: "IS-2-500" }
   ];
 
   const members = [
