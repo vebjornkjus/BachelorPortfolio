@@ -19,7 +19,7 @@ const AboutPage = ({ setCurrentPage }) => {
             skaper vi løsninger som overgår summen av delene våre.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            Vi er klare for enhver utfordring som kommer vår vei. og har som mål å kunne levere produter som ikke bare møter teknsike krav, men som også gir en utmerket brukeropplevelse.
+            Vi er klare for enhver utfordring som kommer vår vei. og har som mål å kunne levere produkter som ikke bare møter teknsike krav, men som også gir en utmerket brukeropplevelse.
           
           </p>
         </div>
