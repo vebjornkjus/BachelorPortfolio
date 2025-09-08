@@ -7,19 +7,18 @@ const AboutPage = ({ setCurrentPage }) => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-6">Om Oss</h1>
           <p className="text-xl text-gray-300 leading-relaxed">
-            Vi er fem dedikerte studenter som har funnet sammen gjennom vår felles lidenskap for kreativitet, problemløsning og samarbeid.
+            Vi er fem studenter som har jobbet sammen på flere større prosjekter, og vi er motiverte for å skaffe oss relevant erfaring fra arbeidslivet.
           </p>
         </div>
 
         <div className="glass-card p-8 rounded-xl mb-12">
           <h2 className="text-2xl font-semibold text-white mb-6">Vår Visjon</h2>
           <p className="text-gray-300 leading-relaxed mb-6">
-            Som et team tror vi på kraften av samarbeid og komplementære ferdigheter. 
-            Hver av oss bringer unike perspektiver og ekspertise til bordet, og sammen 
-            skaper vi løsninger som overgår summen av delene våre.
+            Som gruppe jobber vi godt sammen og bruker ulike styrker for å løse oppgaver på en god måte. 
+            Hver enkelt bidrar med egne perspektiver, og sammen finner vi løsninger som fungerer godt i praksis.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            Vi er klare for enhver utfordring som kommer vår vei. og har som mål å kunne levere produter som ikke bare møter teknsike krav, men som også gir en utmerket brukeropplevelse.
+            Vi ønsker å ta imot nye utfordringer og har som mål å levere løsninger som både oppfyller tekniske krav og gir en god opplevelse for brukerne.
           
           </p>
         </div>
@@ -52,11 +51,11 @@ const AboutPage = ({ setCurrentPage }) => {
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Frontend Utvikling (React, Vue, Angular)
+                Frontend Utvikling (React, Javascript, HTML & CSS)
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Backend Utvikling (Node.js, Python, Java, C#)
+                Backend Utvikling (Python, Java, C#, .NET)
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>

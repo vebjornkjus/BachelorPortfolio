@@ -5,9 +5,9 @@ const Header = ({ currentPage, setCurrentPage }) => {
 
   const navItems = [
     { name: 'Hjem', id: 'home' },
-    { name: 'Om oss', id: 'about' },
-    { name: 'Prosjekter', id: 'projects' },
     { name: 'Medlemmer', id: 'members' },
+    { name: 'Prosjekter', id: 'projects' },
+    { name: 'Om oss', id: 'about' },
     { name: 'Kontakt', id: 'contact' }
   ];
 
