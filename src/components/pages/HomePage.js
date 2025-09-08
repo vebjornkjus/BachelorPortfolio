@@ -12,7 +12,7 @@ const HomePage = ({ setCurrentPage }) => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Vi er en gruppe på fem engasjerte studenter som brenner for teknologi og data. Sammen ønsker vi å skape løsninger som løser reelle utfordringer.
+            Vi er en gruppe på fem studenter med interesse for teknologi og data, og vi samarbeider om å utvikle løsninger som kan bidra til å løse praktiske utfordringer
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
