@@ -18,7 +18,7 @@ const AboutPage = ({ setCurrentPage }) => {
             Hver enkelt bidrar med egne perspektiver, og sammen finner vi løsninger som fungerer godt i praksis.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            Vi ønsker å ta imot nye utfordringer og har som mål å levere løsninger som både oppfyller tekniske krav og gir en god opplevelse for brukerne.
+            Vi er klare for enhver utfordring som kommer vår vei. og har som mål å kunne levere produkter som ikke bare møter teknsike krav, men som også gir en utmerket brukeropplevelse.
           
           </p>
         </div>

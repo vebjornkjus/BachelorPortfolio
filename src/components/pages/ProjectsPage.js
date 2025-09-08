@@ -61,7 +61,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Her kan du se prosjektene våre. Prosjektene er skoleoppgaver hvor vi har jobbet og feilet oss fram til en løsning vi er stolte av å vise frem!
+            Her kan du se prosjektene våre. Prosjektene er oppgaver som vi har jobbet med i løpet av studiet og vi har kommet frem til løsninger vi er stolte av å vise frem!
           </p>
         </div>
 

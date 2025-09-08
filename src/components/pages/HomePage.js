@@ -12,7 +12,7 @@ const HomePage = ({ setCurrentPage }) => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Vi er en gruppe på fem engasjerte studenter som brenner for teknologi og data. Sammen ønsker vi å skape løsninger som løser reelle utfordringer.
+            Vi er en gruppe på fem studenter med interesse for teknologi og data, og vi samarbeider om å utvikle løsninger som kan bidra til å løse praktiske utfordringer
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -49,7 +49,7 @@ const HomePage = ({ setCurrentPage }) => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-4 text-white">Sterkt Samarbeid</h3>
-            <p className="text-gray-300">Samarbeid er vår største styrke, og vi legger vekt på å bruke hverandres kunnskap og erfaringer. Gjennom tett samspill arbeider vi for å utvikle løsninger som både viser vårt fellesskap og representerer vår faglige kompetanse.</p>
+            <p className="text-gray-300">Vi setter samarbeid høyt, og legger vekt på å bruke hverandres kunnskap og erfaringer. Gjennom tett samspill arbeider vi for å utvikle løsninger som både viser vårt fellesskap og representerer vår faglige kompetanse.</p>
           </div>
           
           <div className="glass-feature p-8 rounded-xl">
@@ -59,7 +59,7 @@ const HomePage = ({ setCurrentPage }) => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold mb-4 text-white">Høy Kvalitet</h3>
-            <p className="text-gray-300">Å sikre høy kvalitet er vår største utfordring, men også vårt viktigste mål. Vi jobber kontinuerlig for å forbedre oss og sørger for at leveransen alltid representerer vårt beste arbeid.</p>
+            <p className="text-gray-300">Å sikre høy kvalitet er vårt viktigste mål. Vi jobber kontinuerlig for å forbedre oss og sørger for at leveransen alltid representerer vårt beste arbeid.</p>
           </div>
         </div>
       </div>
