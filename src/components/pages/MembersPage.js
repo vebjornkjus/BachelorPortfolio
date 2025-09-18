@@ -365,12 +365,12 @@ const MembersPage = ({ setCurrentPage }) => {
 
       {/* Fly-out Champion Detail Card */}
       {selectedMember && (
-        <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 pt-20 md:pt-12 animate-fadeIn"
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-start justify-center p-4 animate-fadeIn overflow-y-auto"
           onClick={() => setSelectedMember(null)}
         >
-          <div 
-            className={`relative max-w-4xl w-[92%] glass-card rounded-2xl md:rounded-3xl p-6 md:p-6 bg-gradient-to-br ${selectedMember.primaryColor} bg-opacity-10 border border-opacity-30 animate-championSelect overflow-hidden`}
+          <div
+            className={`relative max-w-4xl w-[92%] glass-card rounded-2xl md:rounded-3xl p-6 md:p-6 bg-gradient-to-br ${selectedMember.primaryColor} bg-opacity-10 border border-opacity-30 animate-championSelect my-8 md:my-12`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
