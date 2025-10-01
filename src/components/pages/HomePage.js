@@ -1,6 +1,17 @@
 import React from 'react';
 
 const HomePage = ({ setCurrentPage }) => {
+  const handlePromoVideoClick = () => {
+    setCurrentPage('projects');
+    setTimeout(() => {
+      const target = document.getElementById('promo-video');
+      if (target) {
+        window.location.hash = 'promo-video';
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 150);
+  };
+
   return (
     <div className="min-h-screen">
       {/* HERO */}
@@ -46,6 +57,14 @@ const HomePage = ({ setCurrentPage }) => {
               className="glass-btn-secondary px-8 py-4 rounded-lg glass-focus-ring"
             >
               Se våre prosjekter
+            </button>
+          </div>
+          <div className="mt-4 flex justify-center">
+            <button
+              onClick={handlePromoVideoClick}
+              className="glass-btn-primary px-8 py-4 rounded-lg glass-focus-ring"
+            >
+              Se vår promovideo!
             </button>
           </div>
         </div>

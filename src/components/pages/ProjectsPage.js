@@ -131,6 +131,19 @@ const ProjectsPage = ({ setCurrentPage }) => {
           ))}
         </div>
 
+        <div className="glass-card p-8 rounded-xl mb-16">
+          <h2 className="text-2xl font-semibold text-white mb-7 text-center">Promo video</h2>
+          <div id="promo-video" className="mini-player-wrapper glass-focus-ring">
+            <iframe
+              src="https://www.youtube.com/embed/a_irek_cWBc"
+              title="Presentasjon av Bachelorprosjektet"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         <div className="glass-card p-8 text-center rounded-xl">
           <h2 className="text-2xl font-semibold text-white mb-4">Skrive bacheloroppgaven hos din bedrift?</h2>
           <p className="text-gray-300 mb-6">
