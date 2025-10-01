@@ -97,7 +97,7 @@ const MembersPage = ({ setCurrentPage }) => {
       title: "The Frontend Artisan",
       role: "Frontend-utvikler",
       bio: "Frontend-utvikler med fokus på å skape brukergrensesnitt som kombinerer estetisk design med optimal funksjonalitet. Dedikert til å levere brukervennlige og innovative løsninger.",
-      image: "/images/OliverBilde.jpg",
+      image: "/images/OliverBilde2.JPG",
       linkedin: "https://linkedin.com/in/oliver-gyve",
       github: "https://github.com/olivergyve",
       abilities: ["Frontend", "Unversell utforming", "UX Design", "Aesthetics"],
