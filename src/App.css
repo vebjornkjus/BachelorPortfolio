@@ -314,10 +314,36 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(ellipse at top, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0; /* behind content, above background */
+  background:
+    radial-gradient(800px 800px at 15% 20%, rgba(6, 182, 212, 0.10), transparent 60%),
+    radial-gradient(900px 900px at 85% 30%, rgba(37, 99, 235, 0.08), transparent 62%),
+    radial-gradient(700px 700px at 40% 85%, rgba(99, 102, 241, 0.06), transparent 60%);
+  filter: blur(50px) saturate(110%);
+  transform: translate3d(0,0,0);
+  animation: overlay-drift 75s ease-in-out infinite alternate;
+}
+
+@keyframes overlay-drift {
+  0% {
+    transform: translate3d(0%, 0%, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(-2%, 1%, 0) scale(1.02) rotate(0.001turn);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(2%, -2%, 0) scale(1.03) rotate(-0.001turn);
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-overlay::before {
+    animation: none;
+  }
 }
 
 /* Frosted glass effect for features/cards */
