@@ -11,6 +11,7 @@ import AboutPage from './components/pages/AboutPage';
 import MembersPage from './components/pages/MembersPage';
 import ProjectsPage from './components/pages/ProjectsPage';
 import ContactPage from './components/pages/ContactPage';
+import PlanningQualityPage from './components/pages/PlanningQualityPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -25,6 +26,8 @@ function App() {
         return <ProjectsPage setCurrentPage={setCurrentPage} />;
       case 'members':
         return <MembersPage setCurrentPage={setCurrentPage} />;
+      case 'planning':
+        return <PlanningQualityPage setCurrentPage={setCurrentPage} />;
       case 'contact':
         return <ContactPage />;
       default:
