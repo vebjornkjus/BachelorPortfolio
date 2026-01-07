@@ -133,26 +133,6 @@ const PlanningQualityPage = ({ setCurrentPage }) => {
             </p>
           </div>
         </div>
-
-        {/* Call to Action Card */}
-        <div className="glass-card p-8 rounded-xl text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-xl"></div>
-          <div className="relative z-10">
-            <h3 className="text-2xl font-semibold mb-4 text-white">
-              Interessert i å se våre prosjekter?
-            </h3>
-            <p className="mb-6 text-gray-300">
-              Utforsk hvordan vi jobber med kvalitet og planlegging i praksis
-            </p>
-            <button
-              onClick={() => setCurrentPage('projects')}
-              className="glass-btn-primary px-6 py-3 rounded-lg glass-focus-ring"
-            >
-              Se Prosjekter
-            </button>
-          </div>
-        </div>
-
       </div>
     </div>
   );
