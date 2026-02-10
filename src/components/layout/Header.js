@@ -8,6 +8,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
     { name: 'Medlemmer', id: 'members' },
     { name: 'Prosjekter', id: 'projects' },
     { name: 'Planlegging', id: 'planning' },
+    { name: 'Status 1', id: 'status1' },
     { name: 'Om oss', id: 'about' },
     { name: 'Kontakt', id: 'contact' }
   ];
