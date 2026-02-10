@@ -167,6 +167,7 @@ const MembersPage = ({ setCurrentPage }) => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, selectedMember]);
 
   const currentMember = getCurrentMember();
